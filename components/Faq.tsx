@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useTheme } from '@/lib/theme-context';
 import { ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -32,7 +31,7 @@ const FAQS_LIST = [
       'Starter landing pages typically take around 2 weeks. Custom websites and digital products usually range from 4 to 12 weeks, depending on complexity and features.',
   },
   {
-    question: 'Will the website work on mobile devices?',
+    question: 'Will my website work on mobile devices?',
     answer:
       'Yes. Every digital experience we build is designed mobile-first and thoroughly tested across phones, tablets, laptops, and wide desktop displays.',
   },
@@ -42,7 +41,7 @@ const FAQS_LIST = [
       'Yes. We engineer bespoke platforms, role-based admin panels, inventory management, customer portals, and internal business tools tailored to your operational workflows.',
   },
   {
-    question: 'What information do you need to start a project?',
+    question: 'What information is needed to start a project?',
     answer:
       'We start with your core business goal, reference examples you admire, your target audience, and any existing brand assets or content you already have.',
   },
@@ -52,17 +51,13 @@ const FAQS_LIST = [
       'We work in iterative stages. You review and sign off on wireframes and designs before development begins, ensuring transparency and alignment at each step.',
   },
   {
-    question: 'How can I discuss my project or request a quote?',
+    question: 'How can I discuss a project or request a quote?',
     answer:
       'You can submit the enquiry form below, send us a message on WhatsApp (+91 9109919079), or call us directly. We will review your requirements and get in touch with you.',
   },
 ];
 
 export function Faq() {
-  const { getSectionTheme } = useTheme();
-  const sectionTheme = getSectionTheme('faqs');
-  const isLight = sectionTheme === 'light';
-
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleAccordion = (index: number) => {
@@ -72,11 +67,7 @@ export function Faq() {
   return (
     <section
       id="faqs"
-      className={`py-24 transition-colors ${
-        isLight
-          ? 'bg-[#F8FAFC] text-slate-900 border-b border-slate-200'
-          : 'bg-[#080B12] text-white border-b border-white/[0.08]'
-      }`}
+      className="py-24 bg-[#080B12] text-white border-b border-white/[0.08] transition-colors"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -86,37 +77,27 @@ export function Faq() {
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2
-            className={`text-3xl sm:text-5xl font-extrabold tracking-tight ${
-              isLight ? 'text-slate-900' : 'text-[#F8FAFC]'
-            }`}
+            className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#F8FAFC]"
             style={{ textWrap: 'balance' }}
           >
             Frequently Asked Questions
           </h2>
-          <p
-            className={`mt-4 text-base sm:text-lg leading-relaxed ${
-              isLight ? 'text-slate-600' : 'text-[#94A3B8]'
-            }`}
-          >
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#94A3B8]">
             Straightforward answers to common questions about working with Around Tech.
           </p>
         </div>
 
         {/* Accordions */}
-        <div className="space-y-3">
+        <div className="space-y-3.5">
           {FAQS_LIST.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={faq.question}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isLight
-                    ? isOpen
-                      ? 'bg-white border-[#0163FF]/40 shadow-sm'
-                      : 'bg-white/80 border-slate-200 hover:border-slate-300'
-                    : isOpen
-                    ? 'bg-[#101521] border-[#0163FF]/40 shadow-lg'
-                    : 'bg-[#101521]/60 border-white/[0.08] hover:border-white/[0.14]'
+                  isOpen
+                    ? 'bg-[#101521] border-[#0163FF]/50 shadow-lg'
+                    : 'bg-[#101521]/70 border-white/[0.08] hover:border-white/[0.16]'
                 }`}
               >
                 <button
@@ -127,13 +108,7 @@ export function Faq() {
                 >
                   <span
                     className={`text-base sm:text-lg font-semibold tracking-tight ${
-                      isOpen
-                        ? isLight
-                          ? 'text-[#0163FF]'
-                          : 'text-[#F8FAFC]'
-                        : isLight
-                        ? 'text-slate-900'
-                        : 'text-slate-200'
+                      isOpen ? 'text-[#F8FAFC]' : 'text-slate-200'
                     }`}
                   >
                     {faq.question}
@@ -142,8 +117,6 @@ export function Faq() {
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
                       isOpen
                         ? 'rotate-180 bg-[#0163FF] text-white'
-                        : isLight
-                        ? 'bg-slate-100 text-slate-500'
                         : 'bg-white/[0.06] text-[#94A3B8]'
                     }`}
                   >
@@ -157,13 +130,9 @@ export function Faq() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      transition={{ duration: 0.22, ease: 'easeInOut' }}
                     >
-                      <div
-                        className={`px-6 sm:px-7 pb-6 pt-1 text-sm sm:text-base leading-relaxed ${
-                          isLight ? 'text-slate-600' : 'text-[#94A3B8]'
-                        }`}
-                      >
+                      <div className="px-6 sm:px-7 pb-6 pt-1 text-sm sm:text-base leading-relaxed text-[#94A3B8]">
                         {faq.answer}
                       </div>
                     </motion.div>

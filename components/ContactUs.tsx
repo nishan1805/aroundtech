@@ -2,15 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTheme } from '@/lib/theme-context';
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Send,
-  MessageCircle,
-  AlertCircle,
-  ExternalLink,
-} from 'lucide-react';
+import { Phone, Mail, MapPin, Send, AlertCircle } from 'lucide-react';
 
 const SERVICE_OPTIONS = [
   'Landing Page',
@@ -80,7 +72,6 @@ export function ContactUs() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/919109919079?text=${encodedMessage}`;
 
-    // Browser-compatible window opening
     const win = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     if (!win) {
       window.location.href = whatsappUrl;
@@ -95,7 +86,7 @@ export function ContactUs() {
     <section id="contact" className="py-24 bg-[#080B12] text-white transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Information & Details */}
+          {/* Left Side: Contact Information (Organized, clean, easy to scan) */}
           <div className="lg:col-span-5 space-y-8">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#0163FF] mb-3">
@@ -110,30 +101,32 @@ export function ContactUs() {
               </h2>
               <p className="mt-4 text-base sm:text-lg text-[#94A3B8] leading-relaxed">
                 Send us an enquiry with your project details. We will connect with
-                you on WhatsApp or phone to discuss your project.
+                you directly to discuss your requirements.
               </p>
             </div>
 
-            {/* Direct Contact Points */}
-            <div className="space-y-4 pt-4 border-t border-white/[0.08]">
+            {/* Direct Contact Points with Clear Icons & Spacing */}
+            <div className="space-y-6 pt-4 border-t border-white/[0.08]">
               {/* Phone Numbers */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-[#0163FF]/15 border border-[#0163FF]/30 flex items-center justify-center text-[#0163FF] shrink-0 mt-0.5">
-                  <Phone className="w-4 h-4" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#0163FF]/15 border border-[#0163FF]/30 flex items-center justify-center text-[#0163FF] shrink-0">
+                  <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-[#94A3B8] block mb-0.5">Phone Enquiries</span>
-                  <div className="flex flex-col sm:flex-row sm:gap-4 gap-1">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[#94A3B8] block mb-1">
+                    Call or WhatsApp
+                  </span>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-1.5">
                     <a
                       href="tel:+919109919079"
-                      className="text-sm font-semibold text-white hover:text-[#0163FF] transition-colors"
+                      className="text-base font-bold text-white hover:text-[#0163FF] transition-colors"
                     >
                       +91 9109919079
                     </a>
                     <span className="hidden sm:inline text-white/20">·</span>
                     <a
                       href="tel:+918770454593"
-                      className="text-sm font-semibold text-white hover:text-[#0163FF] transition-colors"
+                      className="text-base font-bold text-white hover:text-[#0163FF] transition-colors"
                     >
                       +91 8770454593
                     </a>
@@ -142,15 +135,17 @@ export function ContactUs() {
               </div>
 
               {/* Email */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-[#FF7A1A]/15 border border-[#FF7A1A]/30 flex items-center justify-center text-[#FF7A1A] shrink-0 mt-0.5">
-                  <Mail className="w-4 h-4" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF7A1A]/15 border border-[#FF7A1A]/30 flex items-center justify-center text-[#FF7A1A] shrink-0">
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-[#94A3B8] block mb-0.5">Email</span>
+                  <span className="text-xs font-medium uppercase tracking-wider text-[#94A3B8] block mb-1">
+                    Direct Email
+                  </span>
                   <a
                     href="mailto:hello@youraround.com"
-                    className="text-sm font-semibold text-white hover:text-[#FF7A1A] transition-colors"
+                    className="text-base font-bold text-white hover:text-[#FF7A1A] transition-colors"
                   >
                     hello@youraround.com
                   </a>
@@ -158,189 +153,176 @@ export function ContactUs() {
               </div>
 
               {/* Address */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-[#94A3B8] shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-slate-300 shrink-0">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-[#94A3B8] block mb-0.5">Location</span>
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[#94A3B8] block mb-1">
+                    Studio Location
+                  </span>
+                  <span className="text-base font-bold text-white">
                     Raipur (C.G.) – 492001
                   </span>
                 </div>
               </div>
             </div>
-
-            {/* Direct WhatsApp Prompt */}
-            <div className="p-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-emerald-400" />
-                <span className="text-xs font-medium text-emerald-200">
-                  Prefer chatting immediately on WhatsApp?
-                </span>
-              </div>
-              <a
-                href="https://wa.me/919109919079"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-semibold text-white hover:underline flex items-center gap-1"
-              >
-                <span>Chat Now</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
           </div>
 
-          {/* Right Column: Exactly 4 Fields WhatsApp Enquiry Form */}
+          {/* Right Side: Compact Two-Row Project Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-white/[0.1] bg-[#101521] p-7 sm:p-10 shadow-2xl relative">
-              <div className="mb-6 pb-4 border-b border-white/[0.08] flex items-center justify-between">
-                <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight">
-                    Project Enquiry Form
-                  </h3>
-                  <p className="text-xs text-[#94A3B8] mt-1">
-                    Fill the form below to open WhatsApp with your details prefilled.
-                  </p>
-                </div>
-                <span className="text-xs text-[#0163FF] font-semibold bg-[#0163FF]/15 px-3 py-1 rounded-full">
-                  Instant Preview
-                </span>
+            <div className="rounded-3xl border border-white/[0.1] bg-[#101521] p-7 sm:p-9 shadow-2xl relative">
+              <div className="mb-6 pb-4 border-b border-white/[0.08]">
+                <h3 className="text-xl font-bold text-white tracking-tight">
+                  Project Enquiry Form
+                </h3>
               </div>
 
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                {/* Field 1: Name */}
-                <div>
-                  <label
-                    htmlFor="client-name"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Your Name <span className="text-[#FF7A1A]">*</span>
-                  </label>
-                  <input
-                    id="client-name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => {
-                      setFormData({ ...formData, name: e.target.value });
-                      if (errors.name) setErrors({ ...errors, name: undefined });
-                    }}
-                    placeholder="e.g. Rahul Sharma"
-                    className={`w-full px-4 py-3 rounded-xl bg-[#0A0E17] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
-                      errors.name
-                        ? 'border-rose-500 focus:border-rose-500'
-                        : 'border-white/[0.12] focus:border-[#0163FF]'
-                    }`}
-                  />
-                  {errors.name && (
-                    <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" />
-                      <span>{errors.name}</span>
-                    </p>
-                  )}
+                {/* Row 1: Name (Left) | Business/Company Name (Right) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Field 1: Name */}
+                  <div>
+                    <label
+                      htmlFor="client-name"
+                      className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
+                    >
+                      Name <span className="text-[#FF7A1A]">*</span>
+                    </label>
+                    <input
+                      id="client-name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => {
+                        setFormData({ ...formData, name: e.target.value });
+                        if (errors.name) setErrors({ ...errors, name: undefined });
+                      }}
+                      placeholder="e.g. Rahul Sharma"
+                      className={`w-full px-4 py-3 rounded-xl bg-[#0A0E17] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
+                        errors.name
+                          ? 'border-rose-500 focus:border-rose-500'
+                          : 'border-white/[0.12] focus:border-[#0163FF]'
+                      }`}
+                    />
+                    {errors.name && (
+                      <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3 shrink-0" />
+                        <span>{errors.name}</span>
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Field 2: Business / Company Name */}
+                  <div>
+                    <label
+                      htmlFor="company-name"
+                      className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
+                    >
+                      Business / Company Name <span className="text-[#FF7A1A]">*</span>
+                    </label>
+                    <input
+                      id="company-name"
+                      type="text"
+                      required
+                      value={formData.company}
+                      onChange={(e) => {
+                        setFormData({ ...formData, company: e.target.value });
+                        if (errors.company)
+                          setErrors({ ...errors, company: undefined });
+                      }}
+                      placeholder="e.g. Acme Tech Solutions"
+                      className={`w-full px-4 py-3 rounded-xl bg-[#0A0E17] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
+                        errors.company
+                          ? 'border-rose-500 focus:border-rose-500'
+                          : 'border-white/[0.12] focus:border-[#0163FF]'
+                      }`}
+                    />
+                    {errors.company && (
+                      <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3 shrink-0" />
+                        <span>{errors.company}</span>
+                      </p>
+                    )}
+                  </div>
                 </div>
 
-                {/* Field 2: Business / Company Name */}
-                <div>
-                  <label
-                    htmlFor="company-name"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Business / Company Name <span className="text-[#FF7A1A]">*</span>
-                  </label>
-                  <input
-                    id="company-name"
-                    type="text"
-                    required
-                    value={formData.company}
-                    onChange={(e) => {
-                      setFormData({ ...formData, company: e.target.value });
-                      if (errors.company) setErrors({ ...errors, company: undefined });
-                    }}
-                    placeholder="e.g. Apex Dynamics Pvt. Ltd."
-                    className={`w-full px-4 py-3 rounded-xl bg-[#0A0E17] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
-                      errors.company
-                        ? 'border-rose-500 focus:border-rose-500'
-                        : 'border-white/[0.12] focus:border-[#0163FF]'
-                    }`}
-                  />
-                  {errors.company && (
-                    <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" />
-                      <span>{errors.company}</span>
-                    </p>
-                  )}
+                {/* Row 2: Phone Number (Left) | Service Required (Right) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Field 3: Phone Number */}
+                  <div>
+                    <label
+                      htmlFor="phone-number"
+                      className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
+                    >
+                      Phone Number <span className="text-[#FF7A1A]">*</span>
+                    </label>
+                    <input
+                      id="phone-number"
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => {
+                        setFormData({ ...formData, phone: e.target.value });
+                        if (errors.phone) setErrors({ ...errors, phone: undefined });
+                      }}
+                      placeholder="e.g. +91 98765 43210"
+                      className={`w-full px-4 py-3 rounded-xl bg-[#0A0E17] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
+                        errors.phone
+                          ? 'border-rose-500 focus:border-rose-500'
+                          : 'border-white/[0.12] focus:border-[#0163FF]'
+                      }`}
+                    />
+                    {errors.phone && (
+                      <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3 shrink-0" />
+                        <span>{errors.phone}</span>
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Field 4: Service Required */}
+                  <div>
+                    <label
+                      htmlFor="service-select"
+                      className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
+                    >
+                      Service Required <span className="text-[#FF7A1A]">*</span>
+                    </label>
+                    <select
+                      id="service-select"
+                      required
+                      value={selectedService}
+                      onChange={(e) => {
+                        setSelectedService(e.target.value);
+                        if (errors.service)
+                          setErrors({ ...errors, service: undefined });
+                      }}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0A0E17] border border-white/[0.12] text-sm text-white focus:outline-none focus:border-[#0163FF] transition-colors cursor-pointer"
+                    >
+                      {SERVICE_OPTIONS.map((opt) => (
+                        <option
+                          key={opt}
+                          value={opt}
+                          className="bg-[#101521] text-white"
+                        >
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                    {errors.service && (
+                      <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3 shrink-0" />
+                        <span>{errors.service}</span>
+                      </p>
+                    )}
+                  </div>
                 </div>
 
-                {/* Field 3: Phone Number */}
-                <div>
-                  <label
-                    htmlFor="phone-number"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Phone Number <span className="text-[#FF7A1A]">*</span>
-                  </label>
-                  <input
-                    id="phone-number"
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => {
-                      setFormData({ ...formData, phone: e.target.value });
-                      if (errors.phone) setErrors({ ...errors, phone: undefined });
-                    }}
-                    placeholder="e.g. +91 98765 43210"
-                    className={`w-full px-4 py-3 rounded-xl bg-[#0A0E17] border text-sm text-white placeholder-slate-500 focus:outline-none transition-colors ${
-                      errors.phone
-                        ? 'border-rose-500 focus:border-rose-500'
-                        : 'border-white/[0.12] focus:border-[#0163FF]'
-                    }`}
-                  />
-                  {errors.phone && (
-                    <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" />
-                      <span>{errors.phone}</span>
-                    </p>
-                  )}
-                </div>
-
-                {/* Field 4: Service Required */}
-                <div>
-                  <label
-                    htmlFor="service-select"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Service Required <span className="text-[#FF7A1A]">*</span>
-                  </label>
-                  <select
-                    id="service-select"
-                    required
-                    value={selectedService}
-                    onChange={(e) => {
-                      setSelectedService(e.target.value);
-                      if (errors.service) setErrors({ ...errors, service: undefined });
-                    }}
-                    className="w-full px-4 py-3 rounded-xl bg-[#0A0E17] border border-white/[0.12] text-sm text-white focus:outline-none focus:border-[#0163FF] transition-colors cursor-pointer"
-                  >
-                    {SERVICE_OPTIONS.map((opt) => (
-                      <option key={opt} value={opt} className="bg-[#101521] text-white">
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.service && (
-                    <p className="mt-1 text-xs text-rose-400 flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3" />
-                      <span>{errors.service}</span>
-                    </p>
-                  )}
-                </div>
-
-                {/* Note about WhatsApp Review */}
+                {/* Single concise helper message near submit button */}
                 <p className="text-xs text-[#94A3B8] leading-relaxed pt-1">
-                  Submitting will open WhatsApp with your enquiry prefilled. You can
-                  review the details before pressing send.
+                  Submitting opens WhatsApp with your enquiry prefilled. Review the
+                  details before sending.
                 </p>
 
                 {/* Submit Button */}

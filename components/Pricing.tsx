@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useTheme } from '@/lib/theme-context';
-import { Check, ArrowRight, Zap, Layers } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 
 export function Pricing() {
   const { scrollToSection } = useTheme();
@@ -31,17 +31,17 @@ export function Pricing() {
         {/* 2 Packages Only */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Package 1: Starter: Landing Page */}
-          <div className="relative rounded-3xl border border-white/[0.08] bg-[#101521] p-8 sm:p-10 flex flex-col justify-between hover:border-[#0163FF]/40 transition-all duration-300 shadow-xl">
+          <div className="relative rounded-3xl border border-white/[0.08] bg-[#101521] p-8 sm:p-10 flex flex-col justify-between hover:border-[#0163FF]/50 transition-all duration-300 shadow-xl">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#0163FF] bg-[#0163FF]/10 px-3 py-1 rounded-full">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#0163FF] bg-[#0163FF]/10 px-3.5 py-1 rounded-full">
                   STARTER PACKAGE
                 </span>
                 <span className="text-xs text-[#94A3B8] font-mono">~ 2 Weeks</span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F8FAFC] tracking-tight">
-                Starter: Landing Page
+                Starter — Landing Page
               </h3>
               <p className="mt-2 text-sm text-[#94A3B8] leading-relaxed">
                 A professional landing page to establish your online presence.
@@ -56,18 +56,18 @@ export function Pricing() {
               </div>
 
               {/* Features List */}
-              <ul className="space-y-3 text-sm text-slate-300">
+              <ul className="space-y-3.5 text-sm text-slate-300">
                 <li className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#0163FF]/20 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#0163FF]" />
                   </div>
-                  <span>Custom landing page design</span>
+                  <span>Custom landing page</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#0163FF]/20 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#0163FF]" />
                   </div>
-                  <span>Responsive layout across devices</span>
+                  <span>Responsive design and implementation</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#0163FF]/20 flex items-center justify-center shrink-0">
@@ -79,7 +79,7 @@ export function Pricing() {
                   <div className="w-5 h-5 rounded-full bg-[#0163FF]/20 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#0163FF]" />
                   </div>
-                  <span>Basic SEO structure</span>
+                  <span>Basic SEO structure and deployment</span>
                 </li>
               </ul>
             </div>
@@ -106,14 +106,14 @@ export function Pricing() {
 
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#FF7A1A] bg-[#FF7A1A]/10 px-3 py-1 rounded-full">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#FF7A1A] bg-[#FF7A1A]/10 px-3.5 py-1 rounded-full">
                   BESPOKE SCOPE
                 </span>
-                <span className="text-xs text-[#94A3B8] font-mono">4–12 Weeks</span>
+                <span className="text-xs text-[#94A3B8] font-mono">~ 4–12 Weeks</span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F8FAFC] tracking-tight">
-                Custom: Digital Product
+                Custom — Digital Product
               </h3>
               <p className="mt-2 text-sm text-[#94A3B8] leading-relaxed">
                 Custom websites, applications, and digital products designed around your requirements.
@@ -128,7 +128,7 @@ export function Pricing() {
               </div>
 
               {/* Features List */}
-              <ul className="space-y-3 text-sm text-slate-300">
+              <ul className="space-y-3.5 text-sm text-slate-300">
                 <li className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#FF7A1A]/20 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5 text-[#FF7A1A]" />
@@ -162,7 +162,7 @@ export function Pricing() {
                 onClick={() =>
                   scrollToSection('#contact', 'Custom Website / E-commerce')
                 }
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#FF7A1A] to-[#FF9E4A] hover:opacity-95 transition-all cursor-pointer shadow-md shadow-[#FF7A1A]/20"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#FF7A1A] to-[#FF9E4A] hover:opacity-95 transition-all cursor-pointer shadow-md shadow-[#FF7A1A]/25"
               >
                 <span>Discuss Your Project</span>
                 <ArrowRight className="w-4 h-4" />

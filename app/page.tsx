@@ -12,7 +12,6 @@ import { OurProcess } from '@/components/OurProcess';
 import { Pricing } from '@/components/Pricing';
 import { Faq } from '@/components/Faq';
 import { ContactUs } from '@/components/ContactUs';
-import { FinalCta } from '@/components/FinalCta';
 import { Footer } from '@/components/Footer';
 import { FloatingActions } from '@/components/FloatingActions';
 
@@ -20,42 +19,39 @@ export default function Home() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-[#080B12] text-white selection:bg-[#0163FF]/30 selection:text-white flex flex-col font-sans antialiased">
-        {/* 1. Header and navigation */}
+        {/* Header and navigation */}
         <Navbar />
 
         <main className="flex-1">
-          {/* 2. Hero */}
+          {/* Hero */}
           <Hero />
 
-          {/* 3. Client logo showcase */}
+          {/* Client logo showcase */}
           <ClientLogos />
 
-          {/* 4. Services */}
+          {/* Services */}
           <Services />
 
-          {/* 5. Selected work / portfolio (13 cards) */}
+          {/* Selected work / portfolio (12 cards) */}
           <SelectedWork />
 
-          {/* 6. Why Choose Around Tech (6 points) */}
+          {/* Why Choose Around Tech (6 points) */}
           <WhyChooseUs />
 
-          {/* 7. Our Process (4 clear steps) */}
+          {/* Our Process (4 connected steps) */}
           <OurProcess />
 
-          {/* 8. Pricing (2 packages) */}
+          {/* Pricing (2 packages) */}
           <Pricing />
 
-          {/* 9. FAQs (8-10 questions) */}
+          {/* FAQs (10 questions) */}
           <Faq />
 
-          {/* 10. Contact Us (WhatsApp enquiry form) */}
+          {/* Contact Us (Compact 2-row WhatsApp enquiry form) */}
           <ContactUs />
-
-          {/* 11. Existing final CTA */}
-          <FinalCta />
         </main>
 
-        {/* 12. Simplified footer */}
+        {/* Merged CTA & Simplified Footer */}
         <Footer />
 
         {/* Floating WhatsApp and Call Actions */}

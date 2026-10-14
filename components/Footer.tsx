@@ -3,36 +3,84 @@
 import React, { useState } from 'react';
 import { Logo } from './Logo';
 import { PolicyModal } from './PolicyModals';
-import { Linkedin } from 'lucide-react';
+import { useTheme } from '@/lib/theme-context';
+import { Linkedin, ArrowRight } from 'lucide-react';
 
 export function Footer() {
+  const { scrollToSection } = useTheme();
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
-      <footer className="bg-[#080B12] text-[#94A3B8] border-t border-white/[0.08] transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          {/* Main Simplified Footer Content */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-12 border-b border-white/[0.08]">
-            <div className="space-y-3 max-w-md">
-              <div className="text-white">
-                <Logo size="md" />
+      <footer className="bg-[#080B12] text-[#94A3B8] border-t border-white/[0.08] relative overflow-hidden transition-colors">
+        {/* Soft Background Gradient Ambience */}
+        <div className="absolute -bottom-28 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-[#0163FF]/20 via-[#0163FF]/10 to-[#FF7A1A]/15 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+          {/* Top Merged CTA Section */}
+          <div className="pb-14 border-b border-white/[0.08] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="text-xs font-semibold tracking-wider uppercase text-[#0163FF] mb-2.5">
+                READY FOR THE NEXT EVOLUTION?
               </div>
+              <h2
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]"
+                style={{ textWrap: 'balance' }}
+              >
+                Let&apos;s Build Something{' '}
+                <span className="bg-gradient-to-r from-[#0163FF] via-[#3B82F6] to-[#FF7A1A] bg-clip-text text-transparent">
+                  Exceptional.
+                </span>
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                Partner with Around Tech for thoughtful UI/UX design, modern websites,
+                and robust business applications.
+              </p>
+            </div>
+
+            <div className="shrink-0 w-full md:w-auto">
+              <button
+                type="button"
+                onClick={() => scrollToSection('#contact')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] shadow-lg shadow-[#0163FF]/30 active:scale-[0.98] transition-all whitespace-nowrap cursor-pointer group"
+              >
+                <span>Start a Project</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
+          </div>
+
+          {/* Main Simplified Footer Branding & Social */}
+          <div className="py-12 border-b border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-3 max-w-md">
+              <a
+                href="#top"
+                onClick={handleLogoClick}
+                className="inline-block text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0163FF] rounded-lg cursor-pointer"
+                aria-label="Return to top"
+              >
+                <Logo size="md" />
+              </a>
               <p className="text-sm leading-relaxed text-[#94A3B8]">
                 Around Tech designs and builds digital products, websites, mobile
                 applications, and custom software for businesses.
               </p>
             </div>
 
-            {/* LinkedIn Social Icon Only */}
+            {/* LinkedIn Social Icon */}
             <div className="flex items-center gap-3">
               <a
                 href="https://www.linkedin.com/company/youraround/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Around Tech LinkedIn Profile"
-                className="w-10 h-10 rounded-full border border-white/[0.12] bg-white/[0.03] flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#0163FF] hover:bg-[#0163FF]/10 transition-colors"
+                className="w-10 h-10 rounded-full border border-white/[0.12] bg-white/[0.03] flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#0163FF] hover:bg-[#0163FF]/10 transition-colors cursor-pointer"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -41,9 +89,7 @@ export function Footer() {
 
           {/* Bottom Footer Bar */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
-            <div>
-              © 2026 Around Tech Pvt. Ltd. All Rights Reserved.
-            </div>
+            <div>© 2026 Around Tech Pvt. Ltd. All Rights Reserved.</div>
 
             <div className="flex items-center gap-6">
               <button

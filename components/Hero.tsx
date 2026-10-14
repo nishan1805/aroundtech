@@ -4,6 +4,7 @@ import React from 'react';
 import { useTheme } from '@/lib/theme-context';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { HeroBackground } from './HeroBackground';
 
 export function Hero() {
   const { scrollToSection } = useTheme();
@@ -13,23 +14,12 @@ export function Hero() {
       id="hero"
       className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-[#080B12] text-white"
     >
-      {/* Background Ambience: Subtle Dot Matrix & Glow Orbs */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 1px 1px, #FFFFFF 1px, transparent 0)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[360px] bg-[#0163FF]/20 rounded-full blur-[140px]" />
-        <div className="absolute top-1/3 right-1/4 w-[380px] h-[280px] bg-[#FF7A1A]/15 rounded-full blur-[120px]" />
-      </div>
+      {/* Subtle modern technological background with particles, connections & glow */}
+      <HeroBackground />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Change 1: Exact Eyebrow */}
+        <div className="text-center max-w-4xl mx-auto relative z-10">
+          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +44,7 @@ export function Hero() {
             </span>
           </motion.h1>
 
-          {/* Change 2: Simplified Subtitle, 2 lines on desktop */}
+          {/* Subtitle - exactly 2 lines on desktop */}
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,7 +54,7 @@ export function Hero() {
             Around Tech helps businesses build digital products through thoughtful design and modern development.
           </motion.p>
 
-          {/* Action Buttons Preserved */}
+          {/* Two Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +64,7 @@ export function Hero() {
             <button
               type="button"
               onClick={() => scrollToSection('#contact')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] shadow-lg shadow-[#0163FF]/25 hover:shadow-[#0163FF]/40 transition-all active:scale-[0.98] group cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] shadow-lg shadow-[#0163FF]/30 hover:shadow-[#0163FF]/50 transition-all active:scale-[0.98] group cursor-pointer"
             >
               <span>Start Your Project</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -83,7 +73,7 @@ export function Hero() {
             <button
               type="button"
               onClick={() => scrollToSection('#work')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-[#F8FAFC] border border-white/[0.14] hover:bg-white/[0.05] transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-[#F8FAFC] border border-white/[0.16] hover:bg-white/[0.06] hover:border-white/[0.3] transition-all cursor-pointer"
             >
               <span>Explore Our Work</span>
             </button>

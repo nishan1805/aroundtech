@@ -1,17 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTheme } from '@/lib/theme-context';
-import {
-  Sparkles,
-  Layout,
-  Globe,
-  Smartphone,
-  Cpu,
-  ArrowRight,
-  CheckCircle2,
-  TrendingUp,
-} from 'lucide-react';
+import { ArrowRight, Smartphone, Layout, Globe, Cpu } from 'lucide-react';
 
 export function Services() {
   const { scrollToSection } = useTheme();
@@ -37,59 +29,46 @@ export function Services() {
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        {/* Bento Grid: 4 Simplified Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Service 1: Landing Pages (Col Span 7) */}
-          <div className="md:col-span-7 group relative rounded-2xl lg:rounded-3xl border border-white/[0.08] bg-[#101521] p-6 sm:p-8 flex flex-col justify-between overflow-hidden hover:border-[#0163FF]/40 transition-all duration-300 shadow-xl">
+          <div className="md:col-span-7 group relative rounded-3xl border border-white/[0.08] bg-[#101521] p-7 sm:p-9 flex flex-col justify-between overflow-hidden hover:border-[#0163FF]/50 transition-all duration-300 shadow-xl">
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#0163FF]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#0163FF]/15 transition-all" />
 
             <div>
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-2 text-xs font-semibold text-[#0163FF]">
-                  <Layout className="w-4 h-4" />
-                  <span>CONVERSION DRIVEN</span>
-                </div>
-                <span className="text-xs text-[#94A3B8] font-mono">01 / LANDING PAGE</span>
+              <div className="flex items-center gap-2.5 text-[#0163FF] mb-3">
+                <Layout className="w-5 h-5" />
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#F8FAFC] tracking-tight">
+                  Landing Pages
+                </h3>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#F8FAFC] tracking-tight">
-                Landing Pages
-              </h3>
-              <p className="mt-3 text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-xl mb-6">
                 Conversion-focused landing pages for products, campaigns, and businesses.
               </p>
 
-              {/* Minimal Hero Preview Graphic */}
-              <div className="mt-6 rounded-xl border border-white/[0.1] bg-[#0A0E17] p-4 space-y-3">
-                <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  </div>
-                  <span className="text-[11px] font-mono text-[#64748B]">high-impact-hero.tsx</span>
-                </div>
-                <div className="space-y-2 py-2">
-                  <div className="w-3/5 h-4 rounded bg-[#0163FF]/30" />
-                  <div className="w-4/5 h-2.5 rounded bg-white/10" />
-                  <div className="flex items-center gap-3 pt-2">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#0163FF] text-white">
-                      Start Project
-                    </span>
-                    <span className="text-[11px] text-[#94A3B8] flex items-center gap-1">
-                      <TrendingUp className="w-3 h-3 text-[#FF7A1A]" /> 3.4x Conversion
-                    </span>
-                  </div>
+              {/* Landing Page Preview */}
+              <div className="relative rounded-2xl border border-white/[0.1] bg-[#0A0E17] overflow-hidden aspect-[16/9] shadow-inner">
+                <Image
+                  src="/projects/home-aura-hero.jpg"
+                  alt="Conversion Landing Page Preview"
+                  fill
+                  className="object-cover object-top opacity-85 group-hover:scale-105 transition-transform duration-500"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E17] via-transparent to-black/30" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white/90 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/10">
+                  <span className="font-medium">Responsive Campaign Hero</span>
+                  <span className="text-[#0163FF] font-semibold">High Conversion</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
-              <span className="text-xs text-[#94A3B8]">High performance &amp; fast launch</span>
+            <div className="mt-8 pt-5 border-t border-white/[0.08] flex justify-end">
               <button
                 type="button"
                 onClick={() => scrollToSection('#contact', 'Landing Page')}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0163FF] hover:text-[#3B82F6] transition-colors cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Landing Page</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
@@ -98,104 +77,104 @@ export function Services() {
           </div>
 
           {/* Service 2: Custom Websites (Col Span 5) */}
-          <div className="md:col-span-5 group relative rounded-2xl lg:rounded-3xl border border-white/[0.08] bg-[#101521] p-6 sm:p-8 flex flex-col justify-between overflow-hidden hover:border-[#0163FF]/40 transition-all duration-300 shadow-xl">
+          <div className="md:col-span-5 group relative rounded-3xl border border-white/[0.08] bg-[#101521] p-7 sm:p-9 flex flex-col justify-between overflow-hidden hover:border-[#3B82F6]/50 transition-all duration-300 shadow-xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#3B82F6]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#3B82F6]/15 transition-all" />
 
             <div>
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-2 text-xs font-semibold text-[#3B82F6]">
-                  <Globe className="w-4 h-4" />
-                  <span>BESPOKE WEB</span>
-                </div>
-                <span className="text-xs text-[#94A3B8] font-mono">02 / WEBSITE</span>
+              <div className="flex items-center gap-2.5 text-[#3B82F6] mb-3">
+                <Globe className="w-5 h-5" />
+                <h3 className="text-2xl font-bold text-[#F8FAFC] tracking-tight">
+                  Custom Websites
+                </h3>
               </div>
 
-              <h3 className="text-2xl font-bold text-[#F8FAFC] tracking-tight">
-                Custom Websites
-              </h3>
-              <p className="mt-3 text-sm text-[#94A3B8] leading-relaxed">
+              <p className="text-sm text-[#94A3B8] leading-relaxed mb-6">
                 Custom business and e-commerce websites designed around your brand and needs.
               </p>
 
-              {/* Minimal Store/Website Interface Preview */}
-              <div className="mt-6 rounded-xl border border-white/[0.1] bg-[#0A0E17] p-4">
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] space-y-1">
-                    <span className="text-[10px] text-[#94A3B8] block">Catalogue</span>
-                    <span className="font-semibold text-white block">E-Commerce</span>
-                  </div>
-                  <div className="p-2.5 rounded-lg bg-[#0163FF]/10 border border-[#0163FF]/20 space-y-1">
-                    <span className="text-[10px] text-[#3B82F6] block">Architecture</span>
-                    <span className="font-semibold text-white block">Brand Website</span>
-                  </div>
-                </div>
-                <div className="mt-3 flex items-center justify-between text-[11px] text-[#94A3B8] pt-2 border-t border-white/[0.06]">
-                  <span>Modular CMS</span>
-                  <span className="text-emerald-400">SEO Ready</span>
+              {/* Website Preview */}
+              <div className="relative rounded-2xl border border-white/[0.1] bg-[#0A0E17] overflow-hidden aspect-[16/10] shadow-inner">
+                <Image
+                  src="/projects/achievers-hero.jpg"
+                  alt="Custom Website Interface Preview"
+                  fill
+                  className="object-cover object-top opacity-85 group-hover:scale-105 transition-transform duration-500"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E17] via-transparent to-black/30" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white/90 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/10">
+                  <span className="font-medium">Multi-Page &amp; Storefront</span>
+                  <span className="text-[#3B82F6] font-semibold">Custom CMS</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
-              <span className="text-xs text-[#94A3B8]">Scalable architecture</span>
+            <div className="mt-8 pt-5 border-t border-white/[0.08] flex justify-end">
               <button
                 type="button"
                 onClick={() =>
                   scrollToSection('#contact', 'Custom Website / E-commerce')
                 }
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0163FF] hover:text-[#3B82F6] transition-colors cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
               >
-                <span>Discuss Website</span>
+                <span>Discuss Custom Website</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
               </button>
             </div>
           </div>
 
           {/* Service 3: Mobile App Development (Col Span 5) */}
-          <div className="md:col-span-5 group relative rounded-2xl lg:rounded-3xl border border-white/[0.08] bg-[#101521] p-6 sm:p-8 flex flex-col justify-between overflow-hidden hover:border-[#FF7A1A]/40 transition-all duration-300 shadow-xl">
+          <div className="md:col-span-5 group relative rounded-3xl border border-white/[0.08] bg-[#101521] p-7 sm:p-9 flex flex-col justify-between overflow-hidden hover:border-[#FF7A1A]/50 transition-all duration-300 shadow-xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF7A1A]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#FF7A1A]/15 transition-all" />
 
             <div>
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-2 text-xs font-semibold text-[#FF7A1A]">
-                  <Smartphone className="w-4 h-4" />
-                  <span>IOS &amp; ANDROID</span>
-                </div>
-                <span className="text-xs text-[#94A3B8] font-mono">03 / MOBILE APP</span>
+              <div className="flex items-center gap-2.5 text-[#FF7A1A] mb-3">
+                <Smartphone className="w-5 h-5" />
+                <h3 className="text-2xl font-bold text-[#F8FAFC] tracking-tight">
+                  Mobile App Development
+                </h3>
               </div>
 
-              <h3 className="text-2xl font-bold text-[#F8FAFC] tracking-tight">
-                Mobile App Development
-              </h3>
-              <p className="mt-3 text-sm text-[#94A3B8] leading-relaxed">
+              <p className="text-sm text-[#94A3B8] leading-relaxed mb-6">
                 Thoughtfully designed mobile applications with intuitive user experiences.
               </p>
 
-              {/* Minimal Smartphone Frame Preview */}
-              <div className="mt-6 flex items-center justify-center">
-                <div className="w-48 rounded-2xl border-2 border-white/20 bg-[#0A0E17] p-3 shadow-inner">
-                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mb-2" />
-                  <div className="space-y-2">
-                    <div className="w-full h-12 rounded-lg bg-gradient-to-r from-[#0163FF]/30 to-[#FF7A1A]/20 flex items-center px-2">
-                      <span className="text-[10px] font-semibold text-white">Intuitive UX</span>
+              {/* Mobile App Screen Mockup Preview */}
+              <div className="relative rounded-2xl border border-white/[0.1] bg-[#0A0E17] p-5 flex items-center justify-center min-h-[220px]">
+                <div className="w-44 rounded-2xl border-2 border-white/20 bg-[#080B12] p-3 shadow-2xl relative">
+                  <div className="w-10 h-1 bg-white/20 rounded-full mx-auto mb-2" />
+                  <div className="space-y-2 py-1">
+                    <div className="h-10 rounded-lg bg-gradient-to-r from-[#0163FF]/30 to-[#FF7A1A]/20 flex items-center px-2.5 justify-between">
+                      <span className="text-[10px] font-bold text-white">MKC Student Portal</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     </div>
                     <div className="grid grid-cols-2 gap-1.5">
-                      <div className="h-8 rounded bg-white/[0.05]" />
-                      <div className="h-8 rounded bg-white/[0.05]" />
+                      <div className="h-10 rounded bg-white/[0.05] p-1.5 flex flex-col justify-between">
+                        <span className="text-[8px] text-[#94A3B8]">Courses</span>
+                        <span className="text-[9px] font-semibold text-white">Interactive</span>
+                      </div>
+                      <div className="h-10 rounded bg-white/[0.05] p-1.5 flex flex-col justify-between">
+                        <span className="text-[8px] text-[#94A3B8]">Live Tests</span>
+                        <span className="text-[9px] font-semibold text-white">Realtime</span>
+                      </div>
                     </div>
+                  </div>
+                  <div className="flex justify-around pt-2 mt-1 border-t border-white/10 text-[8px] text-[#94A3B8]">
+                    <span>Home</span>
+                    <span>Lectures</span>
+                    <span>Profile</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
-              <span className="text-xs text-[#94A3B8]">Native &amp; Cross-platform</span>
+            <div className="mt-8 pt-5 border-t border-white/[0.08] flex justify-end">
               <button
                 type="button"
                 onClick={() =>
                   scrollToSection('#contact', 'Mobile App Development')
                 }
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF7A1A] hover:text-[#FFA454] transition-colors cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Mobile App</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
@@ -204,56 +183,54 @@ export function Services() {
           </div>
 
           {/* Service 4: Software Solutions (Col Span 7) */}
-          <div className="md:col-span-7 group relative rounded-2xl lg:rounded-3xl border border-white/[0.08] bg-[#101521] p-6 sm:p-8 flex flex-col justify-between overflow-hidden hover:border-[#0163FF]/40 transition-all duration-300 shadow-xl">
+          <div className="md:col-span-7 group relative rounded-3xl border border-white/[0.08] bg-[#101521] p-7 sm:p-9 flex flex-col justify-between overflow-hidden hover:border-[#0163FF]/50 transition-all duration-300 shadow-xl">
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#0163FF]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#0163FF]/15 transition-all" />
 
             <div>
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-2 text-xs font-semibold text-[#0163FF]">
-                  <Cpu className="w-4 h-4" />
-                  <span>ENTERPRISE &amp; SAAS</span>
-                </div>
-                <span className="text-xs text-[#94A3B8] font-mono">04 / SOFTWARE</span>
+              <div className="flex items-center gap-2.5 text-[#0163FF] mb-3">
+                <Cpu className="w-5 h-5" />
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#F8FAFC] tracking-tight">
+                  Software Solutions
+                </h3>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#F8FAFC] tracking-tight">
-                Software Solutions
-              </h3>
-              <p className="mt-3 text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-xl">
-                Custom platforms and business software, including CRM and ERP solutions.
+              <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-xl mb-6">
+                Custom business platforms and software, including CRM and ERP solutions.
               </p>
 
-              {/* Minimal Software / CRM Interface Preview */}
-              <div className="mt-6 rounded-xl border border-white/[0.1] bg-[#0A0E17] p-4 space-y-3">
-                <div className="flex items-center justify-between pb-2 border-b border-white/[0.06] text-xs">
-                  <span className="font-semibold text-white">Business Operations Dashboard</span>
-                  <span className="text-emerald-400 font-mono">99.9% Uptime</span>
+              {/* Software Interface Preview */}
+              <div className="relative rounded-2xl border border-white/[0.1] bg-[#0A0E17] p-5 shadow-inner space-y-3">
+                <div className="flex items-center justify-between pb-2 border-b border-white/[0.08] text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#0163FF]" />
+                    <span className="font-semibold text-white">Operations Management System</span>
+                  </div>
+                  <span className="text-emerald-400 font-mono text-[11px]">ERP · CRM Active</span>
                 </div>
-                <div className="grid grid-cols-3 gap-2 text-xs">
-                  <div className="p-2 rounded bg-white/[0.03] border border-white/[0.06]">
-                    <span className="text-[10px] text-[#94A3B8] block">CRM Pipeline</span>
-                    <span className="font-semibold text-white">Active</span>
+                <div className="grid grid-cols-3 gap-2.5 pt-1">
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <span className="text-[10px] text-[#94A3B8] block mb-1">Pipeline Analytics</span>
+                    <span className="text-sm font-bold text-white">Lead Tracking</span>
                   </div>
-                  <div className="p-2 rounded bg-white/[0.03] border border-white/[0.06]">
-                    <span className="text-[10px] text-[#94A3B8] block">ERP Workflows</span>
-                    <span className="font-semibold text-white">Automated</span>
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <span className="text-[10px] text-[#94A3B8] block mb-1">Resource Planning</span>
+                    <span className="text-sm font-bold text-white">Automation</span>
                   </div>
-                  <div className="p-2 rounded bg-[#0163FF]/10 border border-[#0163FF]/20">
-                    <span className="text-[10px] text-[#3B82F6] block">Access Control</span>
-                    <span className="font-semibold text-white">Role-Based</span>
+                  <div className="p-3 rounded-xl bg-[#0163FF]/10 border border-[#0163FF]/20">
+                    <span className="text-[10px] text-[#3B82F6] block mb-1">Access Security</span>
+                    <span className="text-sm font-bold text-white">Role-Based</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
-              <span className="text-xs text-[#94A3B8]">CRM · ERP · Admin Portals</span>
+            <div className="mt-8 pt-5 border-t border-white/[0.08] flex justify-end">
               <button
                 type="button"
                 onClick={() =>
                   scrollToSection('#contact', 'Software Solutions (CRM/ERP)')
                 }
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0163FF] hover:text-[#3B82F6] transition-colors cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Software Solution</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
