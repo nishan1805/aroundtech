@@ -68,7 +68,7 @@ export function Services() {
               <button
                 type="button"
                 onClick={() => scrollToSection('#contact', 'Landing Page')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-[#F8FAFC] border border-white/[0.18] hover:border-white/[0.35] hover:bg-white/[0.06] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Landing Page</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
@@ -115,7 +115,7 @@ export function Services() {
                 onClick={() =>
                   scrollToSection('#contact', 'Custom Website / E-commerce')
                 }
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-[#F8FAFC] border border-white/[0.18] hover:border-white/[0.35] hover:bg-white/[0.06] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Custom Website</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
@@ -174,7 +174,7 @@ export function Services() {
                 onClick={() =>
                   scrollToSection('#contact', 'Mobile App Development')
                 }
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-[#F8FAFC] border border-white/[0.18] hover:border-white/[0.35] hover:bg-white/[0.06] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Mobile App</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
@@ -230,7 +230,7 @@ export function Services() {
                 onClick={() =>
                   scrollToSection('#contact', 'Software Solutions (CRM/ERP)')
                 }
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] transition-all cursor-pointer group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-[#F8FAFC] border border-white/[0.18] hover:border-white/[0.35] hover:bg-white/[0.06] transition-all cursor-pointer group/btn"
               >
                 <span>Discuss Software Solution</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />

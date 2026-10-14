@@ -42,10 +42,6 @@ export function SelectedWork() {
 }
 
 function PortfolioCard({ project }: { project: PortfolioProject }) {
-  const displayHost = project.url
-    .replace(/^https?:\/\/(www\.)?/, '')
-    .replace(/\/.*$/, '');
-
   return (
     <article className="group rounded-3xl border border-white/[0.08] bg-[#101521] hover:border-white/[0.22] flex flex-col justify-between overflow-hidden transition-all duration-300 shadow-xl shadow-black/40 hover:-translate-y-1">
       {/* Top Preview Window */}
@@ -89,15 +85,10 @@ function PortfolioCard({ project }: { project: PortfolioProject }) {
         ) : (
           /* Clean Stylized Website Hero Preview with Logo / Brand Typography */
           <div className="relative w-full h-full flex flex-col justify-between p-6 bg-gradient-to-br from-[#141B2D] via-[#0D121F] to-[#080B12]">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-              </div>
-              <span className="text-[11px] font-mono text-slate-500">
-                {displayHost}
-              </span>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
             </div>
 
             <div className="my-auto text-center space-y-2">
@@ -180,10 +171,10 @@ function PortfolioCard({ project }: { project: PortfolioProject }) {
           )}
         </div>
 
-        {/* Card Footer: Prominent single-line Visit Website button */}
-        <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-4">
+        {/* Card Footer: Tertiary Link (Visit Website) without displayed URL */}
+        <div className="pt-4 border-t border-white/[0.08] flex items-center justify-start">
           {project.isApp ? (
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-amber-400/90 whitespace-nowrap py-1">
               <Clock className="w-3.5 h-3.5 shrink-0" />
               <span>In Development</span>
             </div>
@@ -192,16 +183,12 @@ function PortfolioCard({ project }: { project: PortfolioProject }) {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-[#0163FF] hover:bg-[#0052d9] shadow-sm shadow-[#0163FF]/30 transition-all cursor-pointer whitespace-nowrap group/btn"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0163FF] hover:text-[#3B82F6] transition-colors cursor-pointer whitespace-nowrap group/link py-1 focus-visible:outline-none focus-visible:underline"
             >
               <span>Visit Website</span>
-              <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 shrink-0" />
+              <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 shrink-0" />
             </a>
           )}
-
-          <span className="text-[11px] font-mono text-slate-500 truncate text-right">
-            {displayHost}
-          </span>
         </div>
       </div>
     </article>
